@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | Athena's Psychology Pages</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="about">
+    <div class="page-shell">
+      <aside class="sidebar">
+        <div class="sidebar-card brand-card">
+          <p class="eyebrow">Psychology pages</p>
+          <h1 id="siteTitle"></h1>
+          <p id="siteSubtitle" class="brand-copy"></p>
+        </div>
+
+        <nav class="sidebar-card tab-nav" aria-label="Primary">
+          <a class="tab-link" data-nav="home" href="./index.html">Hub</a>
+          <a class="tab-link" data-nav="about" href="./about.html">About Me</a>
+          <a class="tab-link" data-nav="threads" href="./threads.html">Threads</a>
+          <a class="tab-link" data-nav="reading-room" href="./reading-room.html">Reading Room</a>
+        </nav>
+
+        <section class="sidebar-card tiny-stack">
+          <p class="eyebrow">Favourite topics</p>
+          <div id="topicPills" class="pill-wrap"></div>
+        </section>
+
+        <section class="sidebar-card tiny-stack">
+          <p class="eyebrow">Currently reading</p>
+          <div id="sidebarReading"></div>
+        </section>
+
+        <section class="sidebar-card tiny-stack">
+          <p class="eyebrow">Pinned note</p>
+          <div id="sidebarPinned"></div>
+        </section>
+      </aside>
+
+      <main class="content-shell">
+        <section class="scrapbook-card page-title-card">
+          <p class="eyebrow">About me</p>
+          <h2>Reflective, research-minded, and building a polished student portfolio</h2>
+        </section>
+
+        <section class="scrapbook-card about-layout">
+          <div class="photo-frame">
+            <img id="aboutImage" alt="About image placeholder" />
+            <span class="frame-note">replace with your own photo</span>
+          </div>
+          <div class="about-copy">
+            <p class="eyebrow">Athena</p>
+            <h2 id="aboutTitle"></h2>
+            <p id="aboutBody"></p>
+            <div id="aboutHighlights" class="highlights-list"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <button id="adminToggle" class="admin-toggle" aria-label="Open admin panel">Admin</button>
+
+    <dialog id="adminModal" class="admin-modal">
+      <form id="passwordGate" class="admin-password-card" method="dialog">
+        <p class="eyebrow">Private editor</p>
+        <h2>Enter password</h2>
+        <p class="tiny-copy">This gate is client-side only. It hides the editor, but it is not secure like a real backend login.</p>
+        <label for="adminPassword">Password</label>
+        <input id="adminPassword" type="password" required />
+        <p id="passwordMessage" class="error-copy" aria-live="polite"></p>
+        <div class="button-row">
+          <button type="submit" class="primary-button small-button">Unlock</button>
+          <button type="button" id="closeAdminModal" class="ghost-button">Close</button>
+        </div>
+      </form>
+
+      <section id="adminPanel" class="admin-panel" hidden>
+        <div class="admin-header">
+          <div>
+            <p class="eyebrow">Customise site</p>
+            <h2>Notebook editor</h2>
+          </div>
+          <div class="button-row">
+            <button type="button" id="exportData" class="ghost-button">Export JSON</button>
+            <button type="button" id="resetData" class="ghost-button">Reset</button>
+            <button type="button" id="closeEditor" class="primary-button small-button">Done</button>
+          </div>
+        </div>
+
+        <div class="admin-layout">
+          <section class="admin-section">
+            <h3>Site details</h3>
+            <div id="siteFields" class="field-stack"></div>
+          </section>
+
+          <section class="admin-section">
+            <h3>Topics and tags</h3>
+            <label for="tagEditor">Comma-separated tags</label>
+            <textarea id="tagEditor" rows="3"></textarea>
+            <button type="button" id="saveTags" class="secondary-button small-button">Save tags</button>
+          </section>
+
+          <section class="admin-section">
+            <div class="section-heading compact">
+              <h3>Posts</h3>
+              <button type="button" id="addPost" class="secondary-button small-button">Add post</button>
+            </div>
+            <div id="postEditorList" class="editor-list"></div>
+          </section>
+
+          <section class="admin-section">
+            <div class="section-heading compact">
+              <h3>Resources</h3>
+              <button type="button" id="addResource" class="secondary-button small-button">Add resource</button>
+            </div>
+            <div id="resourceEditorList" class="editor-list"></div>
+          </section>
+
+          <section class="admin-section">
+            <h3>Import / export</h3>
+            <label for="importExportBox">Paste exported JSON here to replace current content</label>
+            <textarea id="importExportBox" rows="10"></textarea>
+            <button type="button" id="importData" class="primary-button small-button">Import JSON</button>
+          </section>
+        </div>
+      </section>
+    </dialog>
+
+    <template id="editorCardTemplate">
+      <article class="editor-card"></article>
+    </template>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
