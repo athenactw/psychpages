@@ -1,0 +1,73 @@
+.admin-portal-body,
+.cms-body {
+  background:
+    radial-gradient(circle at top left, rgba(207, 230, 255, 0.9), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(248, 232, 169, 0.85), transparent 25%),
+    linear-gradient(180deg, #fffef8 0%, var(--cream-bg) 100%);
+}
+
+.admin-portal-shell {
+  width: min(1200px, calc(100% - 24px));
+  margin: 24px auto;
+  display: grid;
+  gap: 20px;
+}
+
+.admin-hero-card h1,
+.admin-card h2 {
+  margin: 0;
+  font-family: var(--font-heading);
+}
+
+.admin-hero-copy,
+.admin-card p,
+.guide-item p {
+  line-height: 1.7;
+}
+
+.admin-auth-row,
+.guide-grid,
+.admin-card-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.admin-auth-row {
+  grid-template-columns: repeat(auto-fit, minmax(160px, max-content));
+  align-items: center;
+  margin-top: 18px;
+}
+
+.admin-card-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.admin-card {
+  min-height: 220px;
+}
+
+.admin-card:hover {
+  transform: translateY(-2px) rotate(-0.4deg);
+}
+
+.guide-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.guide-item {
+  padding: 16px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(144, 184, 214, 0.42);
+}
+
+#authStatus {
+  margin: 12px 0 0;
+}
+
+@media (max-width: 720px) {
+  .admin-portal-shell {
+    width: min(100% - 18px, 100%);
+    margin: 14px auto 24px;
+  }
+}

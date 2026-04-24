@@ -27,6 +27,8 @@ body {
   font-family: var(--font-body);
   color: var(--brown-text);
   background:
+    linear-gradient(rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.78)),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280' viewBox='0 0 280 280'%3E%3Cg fill='none' stroke='%2390b8d6' stroke-opacity='0.18' stroke-width='2'%3E%3Cpath d='M60 48c26-14 42 10 28 27-9 10-22 11-28 2-6 9-19 8-28-2-14-17 2-41 28-27Z'/%3E%3Cpath d='M192 168c30-18 49 11 33 31-10 12-25 13-33 2-8 11-23 10-33-2-16-20 3-49 33-31Z'/%3E%3Cpath d='M77 77c13 9 23 19 29 34'/%3E%3Cpath d='M203 199c14 10 25 21 31 38'/%3E%3Cpath d='M18 229c43-42 82-31 120-68' stroke-opacity='0.11'/%3E%3Cpath d='M149 31c38 17 65 4 109 34' stroke-opacity='0.11'/%3E%3C/g%3E%3C/svg%3E"),
     radial-gradient(circle at top left, rgba(207, 230, 255, 0.9), transparent 28%),
     radial-gradient(circle at bottom right, rgba(248, 232, 169, 0.85), transparent 25%),
     linear-gradient(180deg, #fffef8 0%, var(--cream-bg) 100%);
@@ -115,7 +117,9 @@ button {
 .editor-card,
 .admin-password-card {
   position: relative;
-  background: rgba(255, 253, 248, 0.92);
+  background:
+    linear-gradient(rgba(255, 253, 248, 0.96), rgba(255, 253, 248, 0.96)),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220' viewBox='0 0 220 220'%3E%3Cg fill='none' stroke='%238fc8ff' stroke-opacity='0.12' stroke-width='1.8'%3E%3Cpath d='M110 42c20-13 33 8 22 21-7 8-17 8-22 1-5 7-15 7-22-1-11-13 2-34 22-21Z'/%3E%3Cpath d='M92 60c7 6 13 13 18 24'/%3E%3Cpath d='M128 60c-7 6-13 13-18 24'/%3E%3Cpath d='M46 152c18-19 42-21 66-4' stroke-opacity='0.08'/%3E%3Cpath d='M112 148c18-18 39-19 62-3' stroke-opacity='0.08'/%3E%3C/g%3E%3C/svg%3E");
   border: 2px solid rgba(144, 184, 214, 0.72);
   border-radius: 28px;
   box-shadow: var(--shadow);
@@ -138,6 +142,24 @@ button {
   inset: 10px;
   border: 1px dashed rgba(143, 200, 255, 0.7);
   border-radius: 22px;
+  pointer-events: none;
+}
+
+.scrapbook-card::after,
+.sidebar-card::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 46px;
+  height: 30px;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 25% 38%, rgba(143, 200, 255, 0.88) 0 30%, transparent 31%),
+    radial-gradient(circle at 75% 38%, rgba(143, 200, 255, 0.88) 0 30%, transparent 31%),
+    radial-gradient(circle at 50% 54%, rgba(248, 232, 169, 0.95) 0 13%, transparent 14%),
+    linear-gradient(180deg, transparent 0 46%, rgba(143, 200, 255, 0.88) 46% 54%, transparent 54% 100%);
+  opacity: 0.55;
   pointer-events: none;
 }
 
@@ -370,9 +392,28 @@ button {
   position: relative;
   padding: 18px;
   border-radius: 24px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 250, 241, 0.93));
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.96), rgba(255, 250, 241, 0.93)),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='none' stroke='%2390b8d6' stroke-opacity='0.1' stroke-width='1.5'%3E%3Cpath d='M80 34c14-9 24 6 16 15-5 6-12 6-16 1-4 5-11 5-16-1-8-9 2-24 16-15Z'/%3E%3Cpath d='M67 47c5 4 9 9 13 16'/%3E%3Cpath d='M93 47c-5 4-9 9-13 16'/%3E%3C/g%3E%3C/svg%3E");
   border: 2px solid rgba(144, 184, 214, 0.54);
   box-shadow: 0 14px 28px rgba(133, 149, 164, 0.14);
+}
+
+.thread-card-media,
+.post-detail-cover {
+  margin-bottom: 14px;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 2px solid rgba(249, 219, 231, 0.75);
+  background: linear-gradient(135deg, rgba(207, 230, 255, 0.92), rgba(255, 255, 255, 0.85));
+}
+
+.thread-card-media {
+  aspect-ratio: 4 / 3;
+}
+
+.post-detail-cover {
+  aspect-ratio: 16 / 9;
 }
 
 .thread-card::before,
@@ -469,11 +510,60 @@ button {
   gap: 16px;
 }
 
+.post-layout-chip {
+  background: rgba(207, 230, 255, 0.5);
+}
+
+.post-detail--notebook {
+  background:
+    repeating-linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.96) 0,
+      rgba(255, 255, 255, 0.96) 34px,
+      rgba(207, 230, 255, 0.22) 34px,
+      rgba(207, 230, 255, 0.22) 36px
+    ),
+    rgba(255, 253, 248, 0.92);
+}
+
+.post-detail--moodboard {
+  background:
+    radial-gradient(circle at top right, rgba(249, 219, 231, 0.3), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(248, 232, 169, 0.26), transparent 24%),
+    rgba(255, 253, 248, 0.95);
+}
+
 .empty-state {
   padding: 18px;
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.78);
   border: 1px dashed rgba(144, 184, 214, 0.68);
+}
+
+.empty-state--decorated {
+  position: relative;
+  overflow: hidden;
+  min-height: 160px;
+  display: grid;
+  align-content: center;
+  gap: 10px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cg fill='none' stroke='%238fc8ff' stroke-opacity='0.14' stroke-width='1.8'%3E%3Cpath d='M120 58c24-15 39 9 27 24-8 9-19 10-27 2-8 8-19 7-27-2-12-15 3-39 27-24Z'/%3E%3Cpath d='M100 78c7 6 13 14 20 29'/%3E%3Cpath d='M140 78c-7 6-13 14-20 29'/%3E%3Cpath d='M35 178c35-25 80-26 118-5' stroke-opacity='0.08'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.empty-state--decorated::after {
+  content: "";
+  position: absolute;
+  inset: auto 16px 12px auto;
+  width: 84px;
+  height: 54px;
+  background:
+    radial-gradient(circle at 25% 38%, rgba(143, 200, 255, 0.72) 0 30%, transparent 31%),
+    radial-gradient(circle at 75% 38%, rgba(143, 200, 255, 0.72) 0 30%, transparent 31%),
+    radial-gradient(circle at 50% 54%, rgba(248, 232, 169, 0.9) 0 13%, transparent 14%),
+    linear-gradient(180deg, transparent 0 46%, rgba(143, 200, 255, 0.72) 46% 54%, transparent 54% 100%);
+  opacity: 0.7;
 }
 
 .admin-toggle {

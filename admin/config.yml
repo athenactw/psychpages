@@ -2,6 +2,9 @@ backend:
   name: git-gateway
   branch: main
 
+site_url: "/"
+show_preview_links: false
+
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
@@ -61,48 +64,51 @@ collections:
 
   - label: "Posts"
     name: "posts"
+    folder: "content/posts"
+    create: true
+    format: "json"
+    extension: "json"
+    identifier_field: "title"
+    slug: "{{fields.id}}"
     editor:
       preview: false
-    files:
-      - label: "All Posts"
-        name: "posts_file"
-        file: "content/posts.json"
-        format: "json"
-        fields:
-          - label: "Posts"
-            name: "items"
-            widget: "list"
-            summary: "{{fields.title}}"
-            fields:
-              - { label: "ID", name: "id", widget: "string", hint: "Used in the post URL. Keep it lowercase-with-hyphens." }
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", time_format: false }
-              - { label: "Read time", name: "readTime", widget: "string" }
-              - { label: "Excerpt", name: "excerpt", widget: "text" }
-              - { label: "Content", name: "content", widget: "text" }
-              - label: "Tags"
-                name: "tags"
-                widget: "list"
-                field: { label: "Tag", name: "tag", widget: "string" }
-              - { label: "Featured on home", name: "featured", widget: "boolean", default: false }
+    summary: "{{title}}"
+    fields:
+      - { label: "Post ID", name: "id", widget: "string", hint: "Used in the post URL. Lowercase with hyphens only." }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", time_format: false }
+      - { label: "Read time", name: "readTime", widget: "string", default: "5 min" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Cover image", name: "coverImage", widget: "image", required: false }
+      - label: "Layout style"
+        name: "layoutStyle"
+        widget: "select"
+        default: "essay"
+        options:
+          - { label: "Essay", value: "essay" }
+          - { label: "Notebook", value: "notebook" }
+          - { label: "Moodboard", value: "moodboard" }
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        field: { label: "Tag", name: "tag", widget: "string" }
+      - { label: "Featured on home", name: "featured", widget: "boolean", default: false }
+      - { label: "Post body", name: "content", widget: "text" }
 
-  - label: "Resources"
+  - label: "Reading Room"
     name: "resources"
+    folder: "content/resources"
+    create: true
+    format: "json"
+    extension: "json"
+    identifier_field: "title"
+    slug: "{{fields.id}}"
     editor:
       preview: false
-    files:
-      - label: "Reading Room Items"
-        name: "resources_file"
-        file: "content/resources.json"
-        format: "json"
-        fields:
-          - label: "Items"
-            name: "items"
-            widget: "list"
-            summary: "{{fields.title}}"
-            fields:
-              - { label: "ID", name: "id", widget: "string", hint: "Used internally. Keep it lowercase-with-hyphens." }
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Type", name: "type", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
-              - { label: "Link", name: "link", widget: "string", required: false }
+    summary: "{{title}}"
+    fields:
+      - { label: "Resource ID", name: "id", widget: "string", hint: "Lowercase with hyphens only." }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Type", name: "type", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Link", name: "link", widget: "string", required: false }

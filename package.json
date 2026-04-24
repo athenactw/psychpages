@@ -1,0 +1,7 @@
+{
+  "name": "athena-psychology-pages",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build-content.mjs"
+  }
+}

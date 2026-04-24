@@ -3,10 +3,81 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Athena CMS</title>
+    <title>Athena Admin</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="./portal.css" />
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
-  <body>
-    <script src="https://unpkg.com/decap-cms@^3.8.3/dist/decap-cms.js"></script>
+  <body class="admin-portal-body">
+    <main class="admin-portal-shell">
+      <section class="scrapbook-card admin-hero-card">
+        <p class="eyebrow">Private studio</p>
+        <h1>Athena Admin</h1>
+        <p class="admin-hero-copy">
+          This is your editor dashboard. Use the cards below for the exact task you want instead of digging through a generic CMS screen.
+        </p>
+        <div class="admin-auth-row">
+          <button id="loginButton" class="primary-button" type="button">Log in</button>
+          <button id="logoutButton" class="ghost-button" type="button" hidden>Log out</button>
+          <a class="secondary-button" href="../index.html">View site</a>
+        </div>
+        <p id="authStatus" class="tiny-copy"></p>
+      </section>
+
+      <section class="admin-card-grid">
+        <a class="scrapbook-card admin-card" href="./cms.html#/collections/posts/new">
+          <p class="eyebrow">Write</p>
+          <h2>Create a post</h2>
+          <p>Add a new thread with title, date, tags, image, layout style, excerpt, and full post body.</p>
+        </a>
+
+        <a class="scrapbook-card admin-card" href="./cms.html#/collections/posts">
+          <p class="eyebrow">Manage</p>
+          <h2>Edit posts</h2>
+          <p>Open your existing posts, update images and text, change tags, or swap layouts.</p>
+        </a>
+
+        <a class="scrapbook-card admin-card" href="./cms.html#/collections/settings/entries/site_settings">
+          <p class="eyebrow">Brand</p>
+          <h2>Edit homepage and design</h2>
+          <p>Change intro copy, about page text, colors, featured topics, fonts, and overall site mood.</p>
+        </a>
+
+        <a class="scrapbook-card admin-card" href="./cms.html#/collections/resources">
+          <p class="eyebrow">Library</p>
+          <h2>Edit reading room</h2>
+          <p>Add or remove books, articles, podcasts, and links from your resource shelf.</p>
+        </a>
+      </section>
+
+      <section class="scrapbook-card admin-guide-card">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">What each post includes</p>
+            <h3>Clear fields, not mystery boxes</h3>
+          </div>
+        </div>
+        <div class="guide-grid">
+          <div class="guide-item">
+            <strong>Title and excerpt</strong>
+            <p>Controls how the post appears on the Threads page and homepage cards.</p>
+          </div>
+          <div class="guide-item">
+            <strong>Tags</strong>
+            <p>Used in the topic filter so readers can browse by subject.</p>
+          </div>
+          <div class="guide-item">
+            <strong>Cover image</strong>
+            <p>Shows on post cards and at the top of individual post pages.</p>
+          </div>
+          <div class="guide-item">
+            <strong>Layout style</strong>
+            <p>Lets you switch the presentation vibe for a post page without hand-editing code.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./portal.js"></script>
   </body>
 </html>

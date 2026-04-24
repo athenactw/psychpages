@@ -50,18 +50,23 @@ Official docs:
 ### CMS files
 
 - `admin/index.html`
+- `admin/cms.html`
 - `admin/config.yml`
 - `content/settings.json`
-- `content/posts.json`
-- `content/resources.json`
+- `content/posts/*.json`
+- `content/resources/*.json`
+- `content/generated/posts.json`
+- `content/generated/resources.json`
+- `scripts/build-content.mjs`
+- `package.json`
 
-The site now reads its content from those JSON files instead of browser-only local storage, so CMS edits become real repo content.
+The site reads generated content indexes, while the CMS edits individual post and resource files.
 
 ### Netlify setup steps
 
 1. Go to Netlify and choose `Add new project` -> `Import an existing project`.
 2. Connect your GitHub account and choose this repo.
-3. For this static site, leave the build command blank.
+3. Set the build command to `npm run build`
 4. Set the publish directory to `.`
 5. Deploy the site.
 6. Open the Netlify project dashboard.
@@ -69,6 +74,8 @@ The site now reads its content from those JSON files instead of browser-only loc
 8. Under registration, choose `Invite only`.
 9. Under `Services`, enable `Git Gateway`.
 10. Visit `https://YOUR-NETLIFY-SITE.netlify.app/admin/`
+
+Every CMS save now updates real repo files, and Netlify rebuilds the generated content indexes for the live site.
 
 If you want Google or GitHub login buttons, enable them under Netlify Identity external providers.
 
