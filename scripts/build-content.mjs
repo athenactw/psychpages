@@ -15,9 +15,15 @@ await buildCollection("resources");
 async function buildCollection(collectionName) {
   const collectionDir = path.join(contentDir, collectionName);
   const outputFile = path.join(generatedDir, `${collectionName}.json`);
-  const files = (await readdir(collectionDir))
-    .filter((file) => file.endsWith(".json"))
-    .sort((a, b) => a.localeCompare(b));
+  let files = [];
+
+  try {
+    files = (await readdir(collectionDir))
+      .filter((file) => file.endsWith(".json"))
+      .sort((a, b) => a.localeCompare(b));
+  } catch (error) {
+    if (error?.code !== "ENOENT") throw error;
+  }
 
   const items = await Promise.all(
     files.map(async (file) => {
