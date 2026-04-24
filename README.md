@@ -26,17 +26,10 @@ You can also open `index.html` directly, but a local server is better for testin
 
 ## Make it a real public site
 
-This project is now set up for GitHub Pages with:
+This project is set up for simple GitHub Pages hosting with:
 
-- `.github/workflows/deploy-pages.yml`
 - `.nojekyll`
 - `404.html`
-
-According to GitHub's official Pages workflow docs, the current deployment actions are:
-
-- `actions/configure-pages@v5`
-- `actions/upload-pages-artifact@v4`
-- `actions/deploy-pages@v4`
 
 ### Publish steps
 
@@ -44,8 +37,9 @@ According to GitHub's official Pages workflow docs, the current deployment actio
 2. Add that repository as the remote for this folder.
 3. Push the `main` branch.
 4. In GitHub, open `Settings` then `Pages`.
-5. Set the source to `GitHub Actions`.
-6. Wait for the `Deploy GitHub Pages` workflow to finish.
+5. Under `Build and deployment`, set `Source` to `Deploy from a branch`.
+6. Choose branch `main` and folder `/(root)`.
+7. Save and wait a minute or two.
 
 Your public URL will be one of these:
 
