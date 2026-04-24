@@ -1,0 +1,53 @@
+{
+  "theme": {
+    "blueMain": "#cfe6ff",
+    "blueAccent": "#8fc8ff",
+    "yellowSoft": "#f8e8a9",
+    "creamBg": "#fffaf1",
+    "brownText": "#5f4d45",
+    "pinkShadow": "#f9dbe7",
+    "fontHeading": "\"Bettermilk\", \"Iowan Old Style\", \"Palatino Linotype\", serif",
+    "fontBody": "\"Milk Choco\", \"Trebuchet MS\", \"Gill Sans\", sans-serif",
+    "fontHand": "\"LiebeHeide\", \"Segoe Print\", \"Bradley Hand\", cursive"
+  },
+  "site": {
+    "title": "Athena's Psychology Pages",
+    "subtitle": "A coquette blue notebook for reflective psychology writing, study notes, and research-minded posts.",
+    "heroTitle": "Soft study notes, clinical curiosity, and evidence-based reflections.",
+    "heroIntro": "This blog is part diary, part academic portfolio. I use it to turn psychology concepts into clear, thoughtful posts that feel personal without losing rigour.",
+    "heroImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80",
+    "aboutImage": "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=900&q=80",
+    "pinnedTitle": "Why I care about accessible psychological writing",
+    "pinnedExcerpt": "A pinned note on translating research into warm, readable language for students, future clients, and wider audiences.",
+    "currentlyReadingTitle": "The Body Keeps the Score + lecture notes on cognitive bias",
+    "currentlyReadingBody": "I am especially interested in how trauma, memory, and meaning-making shape behaviour and therapeutic outcomes.",
+    "newsletterText": "A gentle monthly round-up of psychology notes, reflections from King's, and useful resources I would actually recommend.",
+    "aboutTitle": "Athena | Year 2 Psychology at King's College London",
+    "aboutBody": "I am Athena, a second-year psychology student at King's College London with a growing interest in clinical psychology, reflective writing, and research communication. I want this space to show that academic work can be elegant, readable, and genuinely helpful. My long-term direction is entrepreneurial clinical psychology: combining strong evidence, warm communication, and creative public-facing work.",
+    "aboutHighlights": [
+      "Research minded and clinically curious",
+      "Reflective but accessible communicator",
+      "Interested in student wellbeing and mental health literacy",
+      "Building a polished university-facing portfolio"
+    ]
+  },
+  "tags": [
+    "Attachment theory",
+    "Anxiety in students",
+    "Social media and self-esteem",
+    "Cognitive biases",
+    "Trauma",
+    "Developmental psychology",
+    "Study tips",
+    "Book reviews",
+    "Dissertation journey",
+    "Research communication"
+  ],
+  "featuredTopics": [
+    "Clinical psychology",
+    "Mental health advocacy",
+    "Reflective writing",
+    "Student wellbeing",
+    "Research communication"
+  ]
+}

@@ -1,6 +1,6 @@
 # Athena's Psychology Pages
 
-Static multi-page scrapbook-style psychology student blog.
+Static multi-page scrapbook-style psychology student blog with a real CMS path.
 
 ## Pages
 
@@ -24,29 +24,53 @@ Then open:
 
 You can also open `index.html` directly, but a local server is better for testing multi-page links consistently.
 
-## Make it a real public site
+## Public site and real admin login
 
-This project is set up for simple GitHub Pages hosting with:
+The public site can still be hosted on GitHub Pages, but the real CMS login is set up for Netlify + Decap CMS.
 
-- `.nojekyll`
-- `404.html`
+This matches the official Decap CMS guidance:
 
-### Publish steps
+- Decap says GitHub authentication needs server support, and Netlify can provide that for GitHub-backed sites.
+- Decap's Netlify setup uses Netlify Identity + Git Gateway.
 
-1. Create a new GitHub repository.
-2. Add that repository as the remote for this folder.
-3. Push the `main` branch.
-4. In GitHub, open `Settings` then `Pages`.
-5. Under `Build and deployment`, set `Source` to `Deploy from a branch`.
-6. Choose branch `main` and folder `/(root)`.
-7. Save and wait a minute or two.
+Official docs:
 
-Your public URL will be one of these:
+- https://decapcms.org/docs/choosing-a-backend/
+- https://decapcms.org/docs/install-decap-cms/
+- https://docs.netlify.com/deploy/create-deploys/
 
-- User site: `https://YOUR-USERNAME.github.io/`
-- Project site: `https://YOUR-USERNAME.github.io/REPO-NAME/`
+### Recommended setup
 
-This project uses relative links, so it works as either a user site or a project site.
+1. Keep the repo on GitHub.
+2. Import that GitHub repo into Netlify.
+3. In Netlify, enable `Identity`.
+4. In Netlify, enable `Git Gateway`.
+5. Open `/admin/` on your Netlify site and log in there.
+
+### CMS files
+
+- `admin/index.html`
+- `admin/config.yml`
+- `content/settings.json`
+- `content/posts.json`
+- `content/resources.json`
+
+The site now reads its content from those JSON files instead of browser-only local storage, so CMS edits become real repo content.
+
+### Netlify setup steps
+
+1. Go to Netlify and choose `Add new project` -> `Import an existing project`.
+2. Connect your GitHub account and choose this repo.
+3. For this static site, leave the build command blank.
+4. Set the publish directory to `.`
+5. Deploy the site.
+6. Open the Netlify project dashboard.
+7. Go to `Identity` and click `Enable Identity`.
+8. Under registration, choose `Invite only`.
+9. Under `Services`, enable `Git Gateway`.
+10. Visit `https://YOUR-NETLIFY-SITE.netlify.app/admin/`
+
+If you want Google or GitHub login buttons, enable them under Netlify Identity external providers.
 
 ### Commands
 
@@ -56,14 +80,6 @@ git add .
 git commit -m "Initial site"
 git push -u origin main
 ```
-
-## Admin editor
-
-- Open the `Admin` button in the bottom-right corner.
-- Password: `Ooni94662873!`
-- All edits save to browser `localStorage`.
-- Use `Export JSON` to back up your content.
-- Use `Import JSON` to restore or move content.
 
 ## Fonts
 
@@ -77,4 +93,4 @@ To use the exact fonts, add them with `@font-face` in `styles.css`. Until then, 
 
 ## Important note
 
-The admin password is only a front-end gate. It is not real authentication. A real private admin area needs a backend or hosted CMS.
+The old front-end-only admin gate has been replaced by a real CMS path. The site content now lives in repo files, which is what makes proper authenticated editing possible.

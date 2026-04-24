@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "id": "favourite-textbook-chapter",
+      "title": "Favourite textbook chapter",
+      "type": "Reading note",
+      "description": "Use this card for chapter summaries, lecture-linked reading, or revision notes that you want easy access to.",
+      "link": "#"
+    },
+    {
+      "id": "podcast-student-anxiety",
+      "title": "Podcast episode on student anxiety",
+      "type": "Podcast",
+      "description": "A placeholder slot for public-facing psychology media that feels thoughtful rather than sensational.",
+      "link": "#"
+    },
+    {
+      "id": "journal-article-archive",
+      "title": "Journal article archive",
+      "type": "Research",
+      "description": "A section for your saved papers on trauma, attachment, social cognition, or any topic you want to keep visible.",
+      "link": "#"
+    }
+  ]
+}

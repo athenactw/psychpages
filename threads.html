@@ -55,77 +55,7 @@
       </main>
     </div>
 
-    <button id="adminToggle" class="admin-toggle" aria-label="Open admin panel">Admin</button>
-
-    <dialog id="adminModal" class="admin-modal">
-      <form id="passwordGate" class="admin-password-card" method="dialog">
-        <p class="eyebrow">Private editor</p>
-        <h2>Enter password</h2>
-        <p class="tiny-copy">This gate is client-side only. It hides the editor, but it is not secure like a real backend login.</p>
-        <label for="adminPassword">Password</label>
-        <input id="adminPassword" type="password" required />
-        <p id="passwordMessage" class="error-copy" aria-live="polite"></p>
-        <div class="button-row">
-          <button type="submit" class="primary-button small-button">Unlock</button>
-          <button type="button" id="closeAdminModal" class="ghost-button">Close</button>
-        </div>
-      </form>
-
-      <section id="adminPanel" class="admin-panel" hidden>
-        <div class="admin-header">
-          <div>
-            <p class="eyebrow">Customise site</p>
-            <h2>Notebook editor</h2>
-          </div>
-          <div class="button-row">
-            <button type="button" id="exportData" class="ghost-button">Export JSON</button>
-            <button type="button" id="resetData" class="ghost-button">Reset</button>
-            <button type="button" id="closeEditor" class="primary-button small-button">Done</button>
-          </div>
-        </div>
-
-        <div class="admin-layout">
-          <section class="admin-section">
-            <h3>Site details</h3>
-            <div id="siteFields" class="field-stack"></div>
-          </section>
-
-          <section class="admin-section">
-            <h3>Topics and tags</h3>
-            <label for="tagEditor">Comma-separated tags</label>
-            <textarea id="tagEditor" rows="3"></textarea>
-            <button type="button" id="saveTags" class="secondary-button small-button">Save tags</button>
-          </section>
-
-          <section class="admin-section">
-            <div class="section-heading compact">
-              <h3>Posts</h3>
-              <button type="button" id="addPost" class="secondary-button small-button">Add post</button>
-            </div>
-            <div id="postEditorList" class="editor-list"></div>
-          </section>
-
-          <section class="admin-section">
-            <div class="section-heading compact">
-              <h3>Resources</h3>
-              <button type="button" id="addResource" class="secondary-button small-button">Add resource</button>
-            </div>
-            <div id="resourceEditorList" class="editor-list"></div>
-          </section>
-
-          <section class="admin-section">
-            <h3>Import / export</h3>
-            <label for="importExportBox">Paste exported JSON here to replace current content</label>
-            <textarea id="importExportBox" rows="10"></textarea>
-            <button type="button" id="importData" class="primary-button small-button">Import JSON</button>
-          </section>
-        </div>
-      </section>
-    </dialog>
-
-    <template id="editorCardTemplate">
-      <article class="editor-card"></article>
-    </template>
+    <a class="admin-toggle" href="./admin/" aria-label="Open admin login">Admin</a>
 
     <script src="./script.js"></script>
   </body>
